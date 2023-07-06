@@ -1,4 +1,4 @@
-@Library('sprints') _
+@Library('sprints-library') _
 
 pipeline {
   agent any
