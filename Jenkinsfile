@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Execute Groovy Script') {
       steps {
-        myscript()
+        myScript()
       }
     }
   }
