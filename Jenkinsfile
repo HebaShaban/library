@@ -1,43 +1,28 @@
-@Library('sprint-library')_
+@Library('sprints') _
+
 pipeline {
-     agent any
-    parameters {
-        booleanParam(name:'project', defaultValue: true, description:'this paramater help you to know project name')
-        choice(name: 'namespace', choices:['dev','prod','stage'], description: '' ) 
+  agent any
+  
+  stages {
+    stage('Execute Groovy Script') {
+      steps {
+        build()
+      }
     }
-
+  }
+     
     stages {
-        stage('check') {
-            steps {
-                echo "checking your code"
-                echo "${params.namespace}"
-               
-            }
-        }
-
-        stage('test') {
-            when {
-                expression{
-                    params.project == true 
-                }
-            }
-            steps {
-                echo "testing your app" 
-            }
-        }
-          stage('final') {
-            steps {
-                echo "finalizing your code"
-                echo "${params.namespace}"
-               
-            }
-        }
-        stage('deployment') {  
-            steps {
-                echo "your code is deployed right now"
-                echo "this build number $BUILD_NUMBER"
-            }
-        }    
+    stage('Execute Groovy Script') {
+      steps {
+        deployment()
+      }
     }
-
+  } 
+ stages {
+    stage('Execute Groovy Script') {
+      steps {
+        push()
+      }
+    }
+  }    
 }
