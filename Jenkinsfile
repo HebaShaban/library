@@ -9,13 +9,5 @@ pipeline {
         build()
       }
     }
-  }
-     
-    stages {
-    stage('testing') {
-      steps {
-        deployment()
-      }
-    }
-  }    
+  } 
 }
