@@ -17,12 +17,5 @@ pipeline {
         deployment()
       }
     }
-  } 
- stages {
-    stage('pushing please') {
-      steps {
-        push()
-      }
-    }
   }    
 }
