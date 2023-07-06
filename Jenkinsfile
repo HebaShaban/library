@@ -1,13 +1,13 @@
-@Library('sprints-library')_
+@Library('sprints-library') _
 
 pipeline {
   agent any
   
   stages {
-    stage('building please') {
+    stage('Execute Groovy Script') {
       steps {
-        build()
+        myScript()
       }
     }
-  } 
-}
+  }
+}‏
