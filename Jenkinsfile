@@ -4,7 +4,7 @@ pipeline {
   agent any
   
   stages {
-    stage('Execute Groovy Script') {
+    stage('building please') {
       steps {
         build()
       }
@@ -12,14 +12,14 @@ pipeline {
   }
      
     stages {
-    stage('Execute Groovy Script') {
+    stage('testing') {
       steps {
         deployment()
       }
     }
   } 
  stages {
-    stage('Execute Groovy Script') {
+    stage('pushing please') {
       steps {
         push()
       }
